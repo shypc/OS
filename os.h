@@ -1,6 +1,6 @@
 #ifndef OS_H
 #define OS_H
-
+#include "job.h"
 class OS
 {
 	public:
