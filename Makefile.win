@@ -1,0 +1,37 @@
+# Project: OSøŒ…Ë
+# Makefile created by Dev-C++ 5.6.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o os.o job.o process.o
+LINKOBJ  = main.o os.o job.o process.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = OSøŒ…Ë.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+os.o: os.cpp
+	$(CPP) -c os.cpp -o os.o $(CXXFLAGS)
+
+job.o: job.cpp
+	$(CPP) -c job.cpp -o job.o $(CXXFLAGS)
+
+process.o: process.cpp
+	$(CPP) -c process.cpp -o process.o $(CXXFLAGS)
