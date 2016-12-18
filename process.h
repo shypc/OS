@@ -1,14 +1,59 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
-#include <job.h>
 
-class Process : public Job
+
+class Process
 {
 	public:
 		Process();
 		~Process();
 	protected:
+		
+	    //这个是进程的运行状态，-1代表不可运行，0代表可运行，>0代表已经停止。
+    int state;
+
+    //表示此进程的运行优先级
+    unsigned int initPriority,nowPriority;
+
+
+    //进程号,是进程的唯一标识
+    unsigned int   pid;
+
+    //进程名
+    String   processName;
+
+    //这个是该进程使用cpu时间的信息，needTime是还需要的时间，maxTime是总共的时间
+    int   needTime,maxTime;
+
+    //进入就绪队列的时间
+    int inTime
+
+    //是否进入就绪队列
+    bool isInQueue;
+
+    //打开的文件相关信息
+    struct  files_struct  *files;
+
+    //是否完成
+    bool isFinish;
+    
+
+
+
+
+/*
+pid
+state
+initPriority,nowPriority;
+processName
+needTime,maxTime;
+int intime;
+
+ */
+
+
+};
 };
 
 #endif
