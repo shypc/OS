@@ -1,7 +1,7 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
-#include <job.h>
+#include "job.h"
 
 class Process : public Job
 {

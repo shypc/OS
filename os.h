@@ -4,7 +4,7 @@
 class OS
 {
 	public:
-		void FCFS(/*Job* JobReadyQueue,int front,int rear*/);
+		void FCFS(Job* JobReadyQueue,int front,int rear);
 		
 	protected:
 };
