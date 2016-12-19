@@ -3,8 +3,8 @@
 JobQueue::JobQueue()
 {
 	data=new Job*[MaxLen];
-	font=-1;
-	rear=-1;
+	font=0;
+	rear=0;
 	JobQueueNum=0;
 }
 

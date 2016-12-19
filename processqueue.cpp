@@ -3,8 +3,8 @@
 ProcessQueue::ProcessQueue()
 {
 	data=new Process*[MaxLen];
-	font=-1;
-	rear=-1;
+	font=0;
+	rear=0;
 	ProcessQueueNum=0;
 }
 
