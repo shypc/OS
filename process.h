@@ -8,55 +8,32 @@ using namespace std;
 class Process
 {
 	public:
-		Process();
+		Process(int pid,string   jobName,int initPriority,int nowPriority,
+			int   needTime,int maxTime,int inTime);
 		~Process();
 		int getPid();
 		void setPid(int pid);
 		
 	private:
-		
-	    //这个是进程的运行状态，-1代表不可运行，0代表可运行，>0代表已经停止。
-    int state;
 
-    //表示此进程的运行优先级
-    unsigned int initPriority,nowPriority;
-
-
-    //进程号,是进程的唯一标识
-  	unsigned int pid;
+	//进程号,是作业的唯一标识
+    unsigned int   pid;
 
     //进程名
     string   processName;
+    
+    //这个是进程的运行状态，-1代表运行完成，0代表可运行，1代表就绪,2代表正在运行。
+    int state;
+
+    //表示此进程的初始优先级，运行优先级 
+    unsigned int initPriority,nowPriority;
 
     //这个是该进程使用cpu时间的信息，needTime是还需要的时间，maxTime是总共的时间
     int   needTime,maxTime;
 
     //进入就绪队列的时间
     int inTime;
-
-    //是否进入就绪队列
-    bool isInQueue;
-
-    //打开的文件相关信息
-    struct  files_struct  *files;
-
-    //是否完成
-    bool isFinish;
     
-
-
-
-
-/*
-pid
-state
-initPriority,nowPriority;
-processName
-needTime,maxTime;
-int intime;
-
- */
-
 
 };
 

@@ -1,6 +1,14 @@
 #include "os.h"
 
-void OS::FCFS(Job* JobReadyQueue,int front,int rear)
+OS::OS()
+{
+	
+} 
+OS::~OS()
+{
+	
+}
+void OS::FCFS(JobQueue jobReadyQueue)
 {
 	
 	

@@ -13,11 +13,19 @@ class JobQueue
 		~JobQueue();
 		bool JobQueueEmpty();				
 		bool JobQueueFull();
-		void JobQueueFont(Process *&x);		//取队头元素，注意：并不出对队。 
+		void JobQueueFont(Job *&x);		//取队头元素，注意：并不出对队。 
+		void JobQueuePriority(Job *&x);	//取优先级最高的元素，注意：并不出对队。
+		void JobQueueResponse(Job *&x);	//取响应比最高的元素，注意：并不出对队。
 		
-		void enJobQueue(Process *x);		//入栈 
-		void outJobQueue();					//出栈 
-		void OutputJobQueue();				//输出各个process的pid 
+		void enJobQueue(Job *x);		//入栈
+		void outJobQueue();					//出栈，队头元素
+		
+		//出栈优先级最高的元素，注意：该元素之后的向前进一位，就像排队一样 
+		void outJobQueuePriority();	
+		
+		//出栈优先级最高的元素，注意：该元素之后的向前进一位，就像排队一样 
+		void outJobQueueResponse();	
+		void OutputJobQueue();				//输出各个process的pid ,便于验证 
 	private:
 		Job ** data;
 		int rear;

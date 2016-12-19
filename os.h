@@ -8,6 +8,8 @@ using namespace std;
 class OS
 {
 	public:
+		OS();
+		~OS();
 		//在函数中调用自身的 jobReadyQueue成员变量时要加this-> 
 		void FCFS(JobQueue jobReadyQueue);	//先来先服务 
 		void SJF(JobQueue jobReadyQueue);	//短进程优先 
@@ -20,7 +22,7 @@ class OS
 		JobQueue getJobReadyQueue();
 	private:
 		//job的就绪队列 
-		JobQueue jobReadyQueue;	
+		JobQueue jobReadyQueue;
 		//存储所有的job的数组 
 		Job* JobArray;		
 		

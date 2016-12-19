@@ -13,10 +13,17 @@ class ProcessQueue
 		~ProcessQueue();
 		bool ProcessQueueEmpty();				
 		bool ProcessQueueFull();
-		void ProcessQueueFont(Process *&x);		//取队头元素，注意：并不出对队。 
+		void ProcessQueueFont(Process *&x);		//取队头元素，注意：并不出对队。
+		void ProcessQueuePriority(Process *&x);	//取优先级最高的元素，注意：并不出对队。
+		void ProcessQueueResponse(Process *&x);	//取响应比最高的元素，注意：并不出对队。 
 		
 		void enProcessQueue(Process *x);		//入栈 
 		void outProcessQueue();					//出栈 
+		//出栈优先级最高的元素，注意：该元素之后的向前进一位，就像排队一样 
+		void outProcessQueuePriority();	
+		
+		//出栈优先级最高的元素，注意：该元素之后的向前进一位，就像排队一样 
+		void outProcessQueueResponse();	
 		void OutputProcessQueue();				//输出各个process的pid 
 	private:
 		Process ** data;
