@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o os.o job.o process.o
-LINKOBJ  = main.o os.o job.o process.o
+OBJ      = main.o os.o job.o process.o processqueue.o jobqueue.o
+LINKOBJ  = main.o os.o job.o process.o processqueue.o jobqueue.o
 LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc
 INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
 CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
@@ -35,3 +35,9 @@ job.o: job.cpp
 
 process.o: process.cpp
 	$(CPP) -c process.cpp -o process.o $(CXXFLAGS)
+
+processqueue.o: processqueue.cpp
+	$(CPP) -c processqueue.cpp -o processqueue.o $(CXXFLAGS)
+
+jobqueue.o: jobqueue.cpp
+	$(CPP) -c jobqueue.cpp -o jobqueue.o $(CXXFLAGS)
