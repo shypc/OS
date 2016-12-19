@@ -1,21 +1,35 @@
 #ifndef JOB_H
 #define JOB_H
 #include "process.h"
-
+#include "processqueue.h"
+#include<string>
+#include<iostream>
+using namespace std;
 class Job
 {
 	public:
 		Job();
-		void FCFS(Process* JobReadyQueue,int front,int rear);
 		~Job();
-	protected:
+		//在函数中调用自身的 jobReadyQueue成员变量时要加this-> 
+		void FCFS(ProcessQueue processReadyQueue);	//先来先服务 
+		void SJF(ProcessQueue processReadyQueue);	//短进程优先 
+		void RR(ProcessQueue processReadyQueue);	//时间片轮转
+		void PSA(ProcessQueue processReadyQueue);	//优先权调度
+		void HRRN(ProcessQueue processReadyQueue);	//高响应比
+		void MFQ(ProcessQueue processReadyQueue);	//多级反馈队列 
+		
+		//获取就绪队列
+		ProcessQueue getprocessReadyQueue();
 	
+	private:
+	//该作业进程的就绪对列
+		ProcessQueue processReadyQueue;	
 		
 	//作业号,是作业的唯一标识
     unsigned int   pid;
 
     //作业名
-    String   processName;
+    string   processName;
     
     //这个是作业的运行状态，-1代表运行完成，0代表可运行，1代表就绪,2代表正在运行。
     int state;
