@@ -2,7 +2,7 @@
 
 JobQueue::JobQueue()
 {
-	data=new Process*[MaxLen];
+	data=new Job*[MaxLen];
 	font=-1;
 	rear=-1;
 	JobQueueNum=0;
@@ -26,7 +26,7 @@ bool JobQueue::JobQueueFull()
 	return 0;
 }
 
-void JobQueue::JobQueueFont(Process *&x)
+void JobQueue::JobQueueFont(Job *&x)
 {
 	if(JobQueueEmpty() )
 		cout<<"队空，不能取队头元素。"<<endl; 
@@ -35,7 +35,7 @@ void JobQueue::JobQueueFont(Process *&x)
 	}	
 }
 
-void JobQueue::enJobQueue(Process *x)
+void JobQueue::enJobQueue(Job *x)
 {
 	if(JobQueueFull())
 	{
@@ -56,7 +56,6 @@ void JobQueue::outJobQueue()
 		font=(font+1)%MaxLen;
 		JobQueueNum--;
 	}
-	
 }
 
 
