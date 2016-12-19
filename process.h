@@ -9,7 +9,7 @@ class Process
 {
 	public:
 		Process(int pid,string   jobName,int initPriority,int nowPriority,
-			int   needTime,int maxTime,int inTime);
+			int   needTime,int maxTime);
 		~Process();
 		int getPid();
 		void setPid(int pid);

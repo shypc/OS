@@ -1,7 +1,7 @@
 #include "process.h"
 
 Process::Process(int pid,string   processName,int initPriority,int nowPriority,
-			int   needTime,int maxTime,int inTime)
+			int   needTime,int maxTime)
 {
 	this->pid=pid;
 	this->processName=processName;
@@ -10,7 +10,6 @@ Process::Process(int pid,string   processName,int initPriority,int nowPriority,
 	this->nowPriority=nowPriority;
 	this->needTime=needTime;
 	this->maxTime=maxTime;
-	this->inTime=inTime;
 }
 
 Process::~Process()

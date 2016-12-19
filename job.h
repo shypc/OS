@@ -9,7 +9,7 @@ class Job
 {
 	public:
 		Job(int pid,string   jobName,int initPriority,int nowPriority,
-			int   needTime,int maxTime,int inTime);
+			int   needTime,int maxTime);
 		~Job();
 		//在函数中调用自身的 jobReadyQueue成员变量时要加this-> 
 		void FCFS(ProcessQueue processReadyQueue);	//先来先服务 

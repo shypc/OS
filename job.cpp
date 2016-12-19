@@ -1,7 +1,7 @@
 #include "job.h"
 
 Job::Job(int pid,string   jobName,int initPriority,int nowPriority,
-			int   needTime,int maxTime,int inTime)
+			int   needTime,int maxTime)
 {
 	this->pid=pid;
 	this->jobName=jobName;
@@ -10,7 +10,6 @@ Job::Job(int pid,string   jobName,int initPriority,int nowPriority,
 	this->nowPriority=nowPriority;
 	this->needTime=needTime;
 	this->maxTime=maxTime;
-	this->inTime=inTime;
 }
 
 Job::~Job()
